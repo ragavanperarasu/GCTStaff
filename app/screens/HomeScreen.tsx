@@ -7,9 +7,37 @@ import {
   Text,
   Avatar
 } from "react-native-paper";
+import { Cache } from "react-native-cache";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+
 
 export default function HomeScreen() {
   const navigation = useNavigation();
+
+  const cache = new Cache({
+    namespace: "myapp",
+    policy: {
+        maxEntries: 50000,
+        stdTTL: 0 
+    },
+    backend: AsyncStorage
+  });
+
+  function handleClick(){
+    const store = async()=>{
+      const name = await cache.get("name");
+      const imgurl = await cache.get("imgrul")
+      if(name === undefined){
+        navigation.navigate("StaffLogin")
+      }else{
+        navigation.navigate("StaffHome")
+      }
+    }
+    store()
+    
+  }
+
   return (
     <PaperProvider>
 
@@ -39,7 +67,7 @@ export default function HomeScreen() {
 
           <Button
             mode="contained"
-            onPress={() => navigation.navigate("StaffLogin")}
+            onPress={handleClick}
             style={styles.but}
             labelStyle={styles.butlab}
           >
@@ -48,7 +76,7 @@ export default function HomeScreen() {
 
           <Button
             mode="contained"
-            onPress={() => navigation.navigate("StaffLogin")}
+            onPress={handleClick}
             style={styles.but}
             labelStyle={styles.butlab}
           >
