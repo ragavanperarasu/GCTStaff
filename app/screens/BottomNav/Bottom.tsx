@@ -3,6 +3,7 @@ import { BottomNavigation, Text } from 'react-native-paper';
 import PageOne from './PageOne';
 import PageTwo from './PageTwo';
 import PageThree from './PageThree';
+import PageFive from './PageFive';
 
 
 const MusicRoute = () => <PageOne/>;
@@ -12,7 +13,7 @@ const AlbumsRoute = () => <PageTwo/>;
 const RecentsRoute = () =><PageThree/>;
 
 
-const NotificationsRoute = () => <Text>Updates</Text>;
+const NotificationsRoute = () => <PageFive/>;
 
 const MyComponent = () => {
   const [index, setIndex] = React.useState(0);

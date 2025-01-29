@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, ScrollView, StyleSheet, Image, Linking } from "react-native";
-import { Avatar, Card, Button } from "react-native-paper";
+import { Card, Button } from "react-native-paper";
 
 import { Cache } from "react-native-cache";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -71,7 +71,7 @@ export default function PageOne() {
 
           <Card.Actions>
             <Button
-              icon="file-image-plus"
+              icon="tooltip-plus"
               style={{
                 backgroundColor: "#DE3163",
                 borderColor: "#DE3163",

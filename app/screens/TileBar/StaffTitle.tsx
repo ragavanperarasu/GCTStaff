@@ -10,7 +10,7 @@ export default function StudentTitle() {
         <Avatar.Icon size={45} icon="account" style={{ backgroundColor:"black"}}/>
             <Appbar.Content title="Lecturer" color='#FFD700' titleStyle={{fontWeight:"700"}}/>
             <Appbar.Action icon="account-convert" color='white' onPress={()=>navigation.navigate("StaffLogin")}/>
-            <Appbar.Action icon="react" color='white'/>
+            <Appbar.Action icon="react" color='white' onPress={()=>navigation.navigate("About")}/>
         </Appbar.Header>
 
   );

@@ -42,8 +42,8 @@ export default function StaffLogin() {
       const result2 = d.find((item) => item.id === result1.id);
       setErr("");
       await cache.set("name", result2.name);
-      await cache.set("imgurl", result2.imgurl);
       await cache.set("staff", result2);
+      
       navigation.navigate("StaffHome")
 
     } catch (error) {
@@ -78,6 +78,7 @@ export default function StaffLogin() {
             if (result1 === undefined) {
               setErr("Please, Check Mail ID & Password");
             } else {
+              await cache.set("result1", result1);
               profileFetch(result1)
             }  
         }

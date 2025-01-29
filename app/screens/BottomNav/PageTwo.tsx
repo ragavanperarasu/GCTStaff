@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, ScrollView, StyleSheet, Image, Linking } from "react-native";
-import { Avatar, Card, Button, Text } from "react-native-paper";
+import { Card, Button, Text } from "react-native-paper";
 
 import { Cache } from "react-native-cache";
 import AsyncStorage from "@react-native-async-storage/async-storage";
